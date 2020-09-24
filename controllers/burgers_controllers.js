@@ -5,15 +5,15 @@ const router = express.Router();
 
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
-        const hbsObj = { burgers: data };
-        console.log(hbsObj);
-        res.render("index", hbsObj);
+        console.log({ burgers: data });
+        res.render("index", { burgers: data });
     });
 });
 
 router.post("/", function(req, res) {
     burger.insertOne([req.body.burger_name, req.body.devoured], function(data) {
         console.log(data);
+        res.render("index", data);
         res.redirect("/");
     });
 });

@@ -1,0 +1,13 @@
+.burger-list {
+    padding: 100px;
+}
+
+button {
+    padding: 10px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

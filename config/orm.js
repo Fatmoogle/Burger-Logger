@@ -2,25 +2,26 @@
 const connection = require("./connection.js");
 
 const orm = {
-    selectAll: function(tableInput) {
-        var queryString = "SELECT * FROM ??";
-        connection.query(queryString, [tableInput], function(err, result) {
+    selectAll: function(cb) {
+        // query is stored in a variable ONLY so I may access the query.sql down below. Without it, query is undefined and it gives an error.
+        const queryString = "SELECT * FROM burgers";
+        const query = connection.query(queryString, function(err, result) {
             if(err) {
                 throw err;
             } else {
                 console.log(query.sql);
-                console.log(result);
+                cb(result);
             }
         });
     },
-    insertOne: function(tableName, burgerName, devouredValue) {
-        const queryString = "INSERT INTO ?? (burger_name, devoured) VALUES (?, ?)"; 
-        connection.query(queryString, [tableName, burgerName, devouredValue], function(err, result) {
+    insertOne: function(burgerName, devouredValue, cb) {
+        const queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?, ?)"; 
+        const query = connection.query(queryString, [burgerName, devouredValue], function(err, result) {
             if(err) {
                 throw err;
             } else {
                 console.log(query.sql);
-                console.log(result);
+                cb(result);
             }
         });
     },

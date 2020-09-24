@@ -2,10 +2,24 @@ const orm = require("../config/orm.js");
 
 console.log(orm);
 
-// Select all of the burger options from the burgers table
-orm.selectAll("burgers");
+const burger = {
+    selectAll: function(cb) {
+        orm.selectAll(function(result) {
+            cb(result);
+        });
+    },
+    insertOne: function(burgerName, devouredValue, cb) {
+        orm.insertOne(burgerName, devouredValue, function(result) {
+            cb(result);
+        });
+    }
+}
 
-orm.insertOne("burgers", "Big Mic", true);
+module.exports = burger;
+// Select all of the burger options from the burgers table
+// orm.selectAll("burgers");
+
+// orm.insertOne("burgers", "Big Mic", true);
 
 // orm.updateOne
 

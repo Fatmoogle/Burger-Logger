@@ -2,9 +2,8 @@
 const connection = require("../config/connection.js");
 
 const orm = {
+    // function to select all burgers from the DB
     selectAll: function(cb) {
-        // function to retrieve all of the burgers from the DB.
-        // query is stored in a variable ONLY so I may access the query.sql down below. Without it, query is undefined and it gives an error.
         const queryString = "SELECT * FROM burgers";
         connection.query(queryString, function(err, result) {
             if(err) {

@@ -1,22 +1,25 @@
-#burger-list {
-    padding: 100px;
+.container {
+    display: flex;
+}
+
+.box1 {
+    flex: 1;
+}
+
+.box2 {
+    flex: 1;
+}
+
+#devoured-burgers {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
 #add-burger {
     padding: 20px;
     background-color: teal;
 
-}
-
-h1 {
-    background: yellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 h2 {
@@ -30,5 +33,5 @@ h2 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
 }
+

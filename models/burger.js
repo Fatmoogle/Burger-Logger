@@ -10,7 +10,12 @@ const burger = {
         orm.insertOne(burger, function(result) {
             cb(result);
         });
+    },
+    updateOne: function(id, cb) {
+        orm.updateOne(id, function(result) {
+            cb(result);
+        });
     }
-}
+};
 
 module.exports = burger;

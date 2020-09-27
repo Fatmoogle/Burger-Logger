@@ -1,10 +1,10 @@
 # Eat Da Burger
 
-![](assets/images/mainpage.PNG)
+![](public/assets/images/mainpage.PNG)
 
-![](assets/images/addBurger.PNG)
+![](public/assets/images/addBurger.PNG)
 
-![](assets/images/router.PNG)
+![](public/assets/images/router.PNG)
 
 ## Description 
 
